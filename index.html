@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art & The Beauty | Premium Makeup Artistry Studio</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #FDFBF7;        /* Ultra premium warm ivory alabaster */
+            --bg-dark: #121212;         /* Luxury deep charcoal onyx */
+            --bg-card: #F7F4EF;         /* Muted tone for structural blocks */
+            --text-main: #1C1A17;       /* Rich high-contrast dark text */
+            --text-muted: #6E6A64;      /* Editorial soft slate taupe */
+            --accent-gold: #C5A880;     /* Refined champagne gold accent */
+            --white: #FFFFFF;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.75;
+            letter-spacing: 0.3px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Minimal Luxury Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        section {
+            padding: 9rem 0;
+        }
+
+        /* Navigation Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.12);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 95px;
+        }
+
+        .logo-block {
+            text-align: left;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-top: 2px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 400;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 110px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            line-height: 1.15;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 520px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background-color: var(--bg-dark);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            transition: var(--transition);
+            border: 1px solid var(--bg-dark);
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--bg-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            border-color: var(--accent-gold);
+        }
+
+        .hero-image-container {
+            position: relative;
+            height: 75vh;
+            background-color: var(--bg-card);
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            padding: 15px;
+        }
+
+        .hero-img-frame {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        /* Info Guide Banner for the User */
+        .user-notice {
+            background-color: #F1ECE4;
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem 2rem;
+            margin-bottom: 4rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .user-notice strong {
+            font-weight: 500;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Editorial Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 5.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent-gold);
+            margin-bottom: 0.75rem;
+            display: block;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        /* Instagram Curated Portfolio Section */
+        .portfolio-section {
+            background-color: var(--white);
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            background-color: var(--bg-cream);
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            padding: 12px;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .portfolio-img-box {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            position: relative;
+            background-color: #EEE9E2;
+        }
+
+        .portfolio-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img-box img {
+            transform: scale(1.04);
+        }
+
+        .insta-tag-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            font-weight: 400;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .portfolio-caption {
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .instagram-footer-link {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .insta-btn-link {
+            font-family: 'Cinzel', serif;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--accent-gold);
+            padding-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .insta-btn-link:hover {
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+        }
+
+        /* Services Layout Menu */
+        .services-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 4.5rem 3rem;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 25px 50px rgba(197, 168, 128, 0.05);
+        }
+
+        .service-meta-head {
+            margin-bottom: 2.5rem;
+        }
+
+        .service-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Interactive Concierge Booking Form */
+        .concierge-booking-box {
+            background-color: var(--white);
+            max-width: 850px;
+            margin: 7rem auto 0 auto;
+            padding: 5.5rem 4.5rem;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.01);
+        }
+
+        .concierge-booking-box h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.9rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .concierge-booking-box p {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+        }
+
+        .form-grid-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .input-element {
+            padding: 1.15rem;
+            border: 1px solid #E3DDD5;
+            background-color: var(--bg-cream);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .input-element:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background-color: var(--white);
+        }
+
+        .whatsapp-submit-btn {
+            width: 100%;
+            background-color: var(--bg-dark);
+            color: var(--white);
+            border: 1px solid var(--bg-dark);
+            padding: 1.35rem;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .whatsapp-submit-btn:hover {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .whatsapp-icon-svg {
+            fill: currentColor;
+            width: 17px;
+            height: 17px;
+        }
+
+        /* Studio Location & Contacts Section */
+        .studio-location-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 5.5rem;
+            align-items: center;
+        }
+
+        .contact-card-block {
+            margin-bottom: 3rem;
+        }
+
+        .contact-card-block h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .contact-card-block p, .contact-card-block a {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .contact-card-block a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Modernized Minimalist Map Frame */
+        .map-frame-container {
+            width: 100%;
+            height: 480px;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            background-color: var(--white);
+            padding: 10px;
+            filter: grayscale(100%) contrast(102%) brightness(98%);
+            transition: var(--transition);
+        }
+
+        .map-frame-container:hover {
+            filter: grayscale(10%) contrast(100%) brightness(100%);
+        }
+
+        .map-frame-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: #8C8780;
+            padding: 5.5rem 0;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: 5px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            section { padding: 6.5rem 0; }
+            .hero-grid, .location-grid, .instagram-grid, .services-menu { grid-template-columns: 1fr; gap: 3.5rem; }
+            .hero { min-height: auto; padding-top: 150px; padding-bottom: 4rem; }
+            .hero-image-container { height: 55vh; }
+            .hero-content h1 { font-size: 3rem; }
+            .nav-links { display: none; } /* Kept clean to uphold premium aesthetic simplicity */
+            .concierge-booking-box { padding: 3.5rem 2rem; }
+            .form-grid-row { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 0 1.5rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Premium Floating Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo-block">
+                    <div class="logo-title">THE ART & THE BEAUTY</div>
+                    <div class="logo-subtitle">Makeup Artistry Atelier</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#portfolio">The Instagram Edit</a></li>
+                    <li><a href="#services">Curated Menu</a></li>
+                    <li><a href="#reserve">Direct Booking</a></li>
+                    <li><a href="#atelier">The Atelier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>The poetry of <span>luxury</span> beauty.</h1>
+                    <p>Bespoke, high-fashion makeup architectural design structured exclusively to frame your most elegant authentic expressions.</p>
+                    <a href="#reserve" class="btn">Secure An Appointment</a>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-img-frame">
+                        <!-- Instagram Main Profile Target Image -->
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=900" alt="The Art and The Beauty Hero Curation" id="heroImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section (Direct Instagram Curation Mapping) -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            
+            <!-- Technical Notice for Instagram Local Syncing -->
+            <div class="user-notice">
+                <strong>💡 Quick Setup Guide for @theart_thebeauty Profile Images:</strong>
+                To completely align this premium standalone file with your actual Instagram grid without relying on temporary, short-lived Instagram links (which expire every 24 hours), save your favorite photos into the same folder as this <code>index.html</code> file with the following filenames: <code>hero.jpg</code>, <code>post1.jpg</code>, <code>post2.jpg</code>, <code>post3.jpg</code>, <code>post4.jpg</code>, <code>post5.jpg</code>, and <code>post6.jpg</code>. They will dynamically lock into place!
+            </div>
+
+            <div class="section-header">
+                <span class="section-subtitle">Curated Gallery</span>
+                <h2 class="section-title">The Instagram Edit</h2>
+            </div>
+            
+            <div class="instagram-grid">
+                <!-- Portfolio Post 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 1 Artistry" id="post1Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">Bridal Curation</div>
+                </div>
+                
+                <!-- Portfolio Post 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 2 Artistry" id="post2Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">High Fashion Editorial</div>
+                </div>
+                
+                <!-- Portfolio Post 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 3 Artistry" id="post3Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">Dewy Radiance Look</div>
+                </div>
+                
+                <!-- Portfolio Post 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 4 Artistry" id="post4Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">Precision Glamour</div>
+                </div>
+                
+                <!-- Portfolio Post 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 5 Artistry" id="post5Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">Luxury Matte Contour</div>
+                </div>
+                
+                <!-- Portfolio Post 6 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img-box">
+                        <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&q=80&w=800" alt="Instagram Look 6 Artistry" id="post6Image">
+                        <div class="insta-tag-overlay">@theart_thebeauty</div>
+                    </div>
+                    <div class="portfolio-caption">Symmetry Masterpiece</div>
+                </div>
+            </div>
+
+            <div class="instagram-footer-link">
+                <a href="https://www.instagram.com/theart_thebeauty" target="_blank" class="insta-btn-link">Follow @theart_thebeauty for real-time updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section Menu -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">The Palette Signature</span>
+                <h2 class="section-title">The Curated Services</h2>
+            </div>
+
+            <div class="services-menu">
+                <div class="service-card">
+                    <div class="service-meta-head">
+                        <h3 class="service-title">Premium Bridal</h3>
+                        <span class="service-tag">Bespoke Curation</span>
+                    </div>
+                    <p class="service-description">Full sensory bridal preparation mapping, HD photography balancing contours, and absolute long-wear fine-art finish.</p>
+                    <button onclick="prepopulateBooking('Premium Bridal Experience')" class="btn btn-outline">Select Path</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-meta-head">
+                            <h3 class="service-title">Editorial & Runway</h3>
+                            <span class="service-tag">Avant-Garde Studio</span>
+                        </div>
+                        <p class="service-description">High-definition structure optimization designed purposefully for luxury media coverage, studio lighting, and print campaigns.</p>
+                    </div>
+                    <button onclick="prepopulateBooking('Editorial & Runway Styling')" class="btn btn-outline">Select Path</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-meta-head">
+                            <h3 class="service-title">Artistry Masterclass</h3>
+                            <span class="service-tag">Elite Mentorship</span>
+                        </div>
+                        <p class="service-description">Exclusive 1-on-1 step by step coaching covering advanced color blending theories, symmetry matching, and business setup.</p>
+                    </div>
+                    <button onclick="prepopulateBooking('1-on-1 Artistry Masterclass')" class="btn btn-outline">Select Path</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Concierge WhatsApp Form Module -->
+            <div id="reserve" class="concierge-booking-box">
+                <h3>The WhatsApp Concierge</h3>
+                <p>Provide your basic event parameter markers to generate a luxury instant booking inquiry thread direct to our studio line.</p>
+                
+                <form id="bookingForm" onsubmit="generateWhatsAppMessage(event)">
+                    <div class="form-grid-row">
+                        <div class="input-group">
+                            <label for="fullName">Your Full Name</label>
+                            <input type="text" id="fullName" class="input-element" placeholder="e.g., Jane Smith" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="eventDate">Target Event Date</label>
+                            <input type="date" id="eventDate" class="input-element" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group" style="margin-bottom: 2.5rem;">
+                        <label for="artistryService">Selected Service Pathway</label>
+                        <select id="artistryService" class="input-element" required>
+                            <option value="" disabled selected>Choose from our premium menu...</option>
+                            <option value="Premium Bridal Experience">Premium Bridal Experience</option>
+                            <option value="Editorial & Runway Styling">Editorial & Runway Styling</option>
+                            <option value="1-on-1 Artistry Masterclass">1-on-1 Artistry Masterclass</option>
+                            <option value="Bespoke Curation Consultation">Bespoke Curation Consultation</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="whatsapp-submit-btn">
+                        <svg class="whatsapp-icon-svg" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.99 0c3.196.001 6.199 1.242 8.456 3.498 2.256 2.256 3.49 5.259 3.49 8.454-.004 6.644-5.341 11.992-11.934 11.992-2.005-.001-3.975-.502-5.729-1.455L0 24zm6.57-4.077c1.6.951 3.43 1.453 5.357 1.454 5.432 0 9.851-4.417 9.855-9.848.002-2.631-1.02-5.103-2.88-6.962C17.043 2.707 14.575 1.683 11.94 1.683c-5.438 0-9.855 4.416-9.859 9.847-.001 2.007.519 3.967 1.503 5.688l-1.015 3.707 3.807-1.001zM17.472 14.34c-.344-.173-2.039-1.006-2.353-1.12-.314-.115-.544-.173-.773.173-.23.344-.889 1.12-1.089 1.348-.2.228-.4.256-.744.085-.344-.173-1.45-.534-2.762-1.704-1.021-.912-1.708-2.036-1.909-2.38-.201-.344-.021-.53.152-.701.156-.153.344-.4.517-.6.172-.2.23-.344.345-.573.115-.23.057-.429-.029-.6-.086-.171-.773-1.861-1.06-2.55-.279-.671-.563-.58-.773-.591-.199-.011-.429-.013-.659-.013-.23 0-.602.086-.917.429-.315.344-1.202 1.174-1.202 2.863 0 1.689 1.23 3.32 1.402 3.55.173.229 2.42 3.696 5.861 5.182.819.354 1.459.566 1.958.725.823.262 1.572.225 2.164.137.66-.098 2.038-.833 2.325-1.637.287-.805.287-1.493.201-1.637-.085-.143-.314-.23-.658-.403z"/>
+                        </svg>
+                        Transmit WhatsApp Inquiry Form
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Coordinates & Real Functional Google Map Embed -->
+    <section id="atelier" class="studio-location-section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="info-details-column">
+                    <div class="contact-card-block">
+                        <h4>The Atelier Location</h4>
+                        <p>G-1003 Shantinagar Society,<br>Kondhwa Budruk,<br>Pune, MH, India</p>
+                    </div>
+                    <div class="contact-card-block">
+                        <h4>Digital Profile Link</h4>
+                        <p><a href="https://www.instagram.com/theart_thebeauty" target="_blank">@theart_thebeauty</a></p>
+                    </div>
+                    <div class="contact-card-block">
+                        <h4>Email Correspondence</h4>
+                        <p><a href="mailto:info@theartthebeauty.com">info@theartthebeauty.com</a></p>
+                    </div>
+                    <div class="contact-card-block">
+                        <h4>Availability Parameter</h4>
+                        <p>Exclusive Curation Room. By Private Booking Only.</p>
+                    </div>
+                </div>
+
+                <!-- Highly Functional Clean Embed Layer Targeting the exact Society and Area -->
+                <div class="map-frame-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=G-1003%20Shantinagar%20Society%20Kondhwa%20Budruk%20Pune&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxe Minimalist Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand-title">THE ART & THE BEAUTY</div>
+            <p>© 2026 The Art & The Beauty Makeup Studio. Developed For Premium Presentation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Client-Side Form Message Compiler Engine -->
+    <script>
+        // Automatic Fallback Check for Local Instagram Image Replacements
+        window.addEventListener('DOMContentLoaded', () => {
+            const checkImageExists = (imgId, localSrc) => {
+                const img = new Image();
+                img.onload = () => { document.getElementById(imgId).src = localSrc; };
+                img.src = localSrc;
+            };
+
+            // Safely map verification attempts to check if user placed their local images
+            checkImageExists('heroImage', 'hero.jpg');
+            checkImageExists('post1Image', 'post1.jpg');
+            checkImageExists('post2Image', 'post2.jpg');
+            checkImageExists('post3Image', 'post3.jpg');
+            checkImageExists('post4Image', 'post4.jpg');
+            checkImageExists('post5Image', 'post5.jpg');
+            checkImageExists('post6Image', 'post6.jpg');
+        });
+
+        // Prepopulate Dropdown from Service Button Triggers
+        function prepopulateBooking(serviceValueString) {
+            const selectDropdown = document.getElementById('artistryService');
+            selectDropdown.value = serviceValueString;
+            
+            // Smooth view transitions
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // WhatsApp String Formatting Engine
+        function generateWhatsAppMessage(event) {
+            event.preventDefault();
+
+            // INSERT YOUR ACTUAL PHONE NUMBER PATH HERE
+            // Template: Country Code + Destination Subscriber Number without symbols/spaces (e.g. 919876543210 for India)
+            const targetedStudioLine = "YOUR_PHONE_NUMBER_HERE"; 
+
+            const nameValue = document.getElementById('fullName').value;
+            const targetRawDate = document.getElementById('eventDate').value;
+            const servicePath = document.getElementById('artistryService').value;
+
+            // Formatted Date Converter
+            const conversionOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const prettyDate = new Date(targetRawDate).toLocaleDateString('en-US', conversionOptions);
+
+            // Elegant Formatted Premium Studio Text Payload
+            const tailoredStudioMessage = `Greetings The Art & The Beauty,
+
+I would love to check calendar availability for an exclusive styling session.
+
+• Client Identity: ${nameValue}
+• Selected Service: ${servicePath}
+• Requested Session Date: ${prettyDate}
+
+Please let me know your current opening parameters. Thank you.`;
+            
+            const urlEncodedPayload = encodeURIComponent(tailoredStudioMessage);
+            const liveCommunicationEndpoint = `https://wa.me/${targetedStudioLine}?text=${urlEncodedPayload}`;
+
+            // Safely pass to the WhatsApp external interface window
+            window.open(liveCommunicationEndpoint, '_blank');
+        }
+    </script>
+</body>
+</html>
